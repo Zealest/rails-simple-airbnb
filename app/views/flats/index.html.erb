@@ -1,0 +1,19 @@
+<h1>Available Flats</h1>
+
+<div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.address %></p>
+          <p class="card-text">Price per night: <%= flat.price_per_night %> €</p>
+          <p class="card-text">Max guests: <%= flat.number_of_guests %></p>
+          <%= link_to 'View details', flat_path(flat), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Add New Flat', new_flat_path, class: 'btn btn-success' %>
